@@ -9,304 +9,161 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       HEADER
-  ══════════════════════════════════════════ -->
-  <header class="site-header annotated" data-label="Header" data-role="Zone de navigation principale — reste visible pendant le scroll" data-tech="&lt;header&gt; HTML5 · position: sticky · top: 0 · z-index: 100">
-    <div class="annotation-tag">Header</div>
-
-    <div class="header-inner">
-      <div class="logo annotated" data-label="Logo / Brand" data-role="Identité du site — lien vers la page d'accueil" data-tech="&lt;a&gt; ou &lt;div&gt; · souvent une image SVG ou du texte stylisé">
-        <div class="annotation-tag">Logo</div>
-        <span class="logo-text">Anatomie<em>.web</em></span>
-      </div>
-
-      <nav class="nav annotated" data-label="Navigation (Nav)" data-role="Liens principaux du site — permet de passer d'une section à l'autre" data-tech="&lt;nav&gt; HTML5 · contient des &lt;a&gt; ou &lt;ul&gt;&lt;li&gt; · aria-label recommandé">
-        <div class="annotation-tag">Nav</div>
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link active">Accueil</a></li>
-          <li><a href="#content" class="nav-link">Contenu</a></li>
-          <li><a href="#cards" class="nav-link">Cartes</a></li>
-          <li><a href="#form" class="nav-link">Formulaire</a></li>
-        </ul>
-      </nav>
-
-      <button class="cta-header annotated" data-label="CTA (Call to Action)" data-role="Bouton d'action principal — incite à une conversion ou interaction clé" data-tech="&lt;button&gt; ou &lt;a&gt; · style distinct pour attirer l'œil · aria-label conseillé">
-        <div class="annotation-tag">CTA</div>
-        Action
-      </button>
-    </div>
-  </header>
-
-  <!-- ═══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════ -->
-  <section class="hero annotated" id="hero" data-label="Hero" data-role="Première section visible — accroche principale, donne le ton du site" data-tech="&lt;section&gt; · souvent 100vh · background-image ou couleur forte · animation d'entrée">
-    <div class="annotation-tag">Hero</div>
-
-    <div class="hero-inner">
-      <p class="eyebrow annotated" data-label="Eyebrow / Surtitre" data-role="Petite ligne au-dessus du titre — contextualise ou catégorise" data-tech="&lt;p&gt; ou &lt;span&gt; · font-size réduit · letter-spacing élevé · souvent en majuscules">
-        <span class="annotation-tag">Eyebrow</span>
-        Démonstrateur interactif
-      </p>
-
-      <h1 class="hero-title annotated" data-label="H1 — Titre principal" data-role="Un seul H1 par page — titre le plus important pour le SEO et l'accessibilité" data-tech="&lt;h1&gt; · un seul par page · lu en premier par les moteurs de recherche et lecteurs d'écran">
-        <span class="annotation-tag">H1</span>
-        Chaque élément<br><em>a un nom.</em>
-      </h1>
-
-      <p class="hero-desc annotated" data-label="Description / Sous-titre" data-role="Texte d'accroche secondaire — précise la promesse du H1" data-tech="&lt;p&gt; · font-weight: 300 · max-width limité pour la lisibilité · line-height généreux">
-        <span class="annotation-tag">Description</span>
-        Cliquez sur n'importe quel élément de cette page pour découvrir son nom, son rôle, et la technologie derrière.
-      </p>
-
-      <div class="hero-actions annotated" data-label="Action Group" data-role="Groupe de boutons d'action — primaire et secondaire côte à côte" data-tech="&lt;div&gt; · display: flex · gap · contient plusieurs &lt;button&gt; ou &lt;a&gt;">
-        <span class="annotation-tag">Action Group</span>
-        <a href="#content" class="btn-primary annotated" data-label="Bouton Primaire" data-role="Action principale — visuellement dominant, une seule par section idéalement" data-tech="&lt;a&gt; ou &lt;button&gt; · background plein · padding généreux · border-radius">
-          <span class="annotation-tag">Btn Primary</span>
-          Explorer ↓
-        </a>
-        <a href="#form" class="btn-secondary annotated" data-label="Bouton Secondaire" data-role="Action alternative — moins prioritaire, visuellement plus discret" data-tech="&lt;a&gt; ou &lt;button&gt; · border: 1px · background transparent · même taille que primaire">
-          <span class="annotation-tag">Btn Secondary</span>
-          Voir le formulaire
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-scroll annotated" data-label="Scroll Indicator" data-role="Invite visuelle à scroller — réduit le taux de rebond sur les hero plein écran" data-tech="&lt;div&gt; · animation CSS keyframes · position: absolute · bottom de la section">
-      <span class="annotation-tag">Scroll Indicator</span>
-      <div class="scroll-dot"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       MAIN
-  ══════════════════════════════════════════ -->
-  <main class="site-main annotated" data-label="Main" data-role="Contenu principal de la page — unique par page, exclu header/footer" data-tech="&lt;main&gt; HTML5 · un seul par page · améliore l'accessibilité et le SEO · landmark ARIA">
-
-    <div class="annotation-tag">Main</div>
-
-    <!-- SECTION CONTENU -->
-    <section class="section" id="content">
-      <div class="container">
-
-        <div class="section-header annotated" data-label="Section Header" data-role="En-tête de section — titre + description pour introduire un bloc de contenu" data-tech="&lt;div&gt; ou &lt;header&gt; · text-align: center souvent · margin-bottom généreux">
-          <span class="annotation-tag">Section Header</span>
-          <p class="section-eyebrow">Les blocs fondamentaux</p>
-          <h2 class="section-title annotated" data-label="H2 — Titre de section" data-role="Titre de niveau 2 — structure la hiérarchie du contenu après le H1" data-tech="&lt;h2&gt; · plusieurs par page · hiérarchie H1 &gt; H2 &gt; H3 · important pour le SEO">
-            <span class="annotation-tag">H2</span>
-            Ce que vous voyez a un nom
-          </h2>
-          <p class="section-desc">Tout site web est composé de blocs réutilisables. Cliquez sur chacun pour l'identifier.</p>
-        </div>
-
-        <!-- TWO-COL -->
-        <div class="two-col annotated" data-label="Grid / Layout" data-role="Mise en page en colonnes — organise le contenu horizontalement" data-tech="&lt;div&gt; · display: grid · grid-template-columns · gap · responsive avec media queries">
-          <span class="annotation-tag">Grid</span>
-
-          <div class="col-text">
-            <h3 class="annotated" data-label="H3 — Sous-titre" data-role="Titre de niveau 3 — détaille un point à l'intérieur d'une section H2" data-tech="&lt;h3&gt; · troisième niveau de hiérarchie · ne pas sauter de niveaux (H1→H2→H3)">
-              <span class="annotation-tag">H3</span>
-              La structure sémantique
-            </h3>
-            <p class="annotated" data-label="Paragraphe" data-role="Bloc de texte courant — unité de base du contenu éditorial" data-tech="&lt;p&gt; · line-height: 1.6–1.8 · max-width ~65ch pour la lisibilité · margin-bottom pour l'espacement">
-              <span class="annotation-tag">Paragraphe</span>
-              HTML définit le sens de chaque élément. Un titre est un titre, un paragraphe est un paragraphe — pas juste du texte avec un style différent. Cette sémantique aide les moteurs de recherche et les lecteurs d'écran.
-            </p>
-            <ul class="annotated" data-label="Liste (ul)" data-role="Énumération non ordonnée — items sans ordre de priorité" data-tech="&lt;ul&gt; · contient des &lt;li&gt; · list-style personnalisable en CSS · &lt;ol&gt; pour les listes ordonnées">
-              <span class="annotation-tag">Liste ul</span>
-              <li>HTML structure le contenu</li>
-              <li>CSS définit l'apparence</li>
-              <li>JavaScript gère l'interactivité</li>
-            </ul>
-          </div>
-
-          <div class="col-visual annotated" data-label="Aside / Colonne visuelle" data-role="Colonne secondaire — complément visuel ou informatif au contenu principal" data-tech="&lt;div&gt; ou &lt;aside&gt; · background différencié · border-radius · padding interne">
-            <span class="annotation-tag">Aside</span>
-            <div class="code-block annotated" data-label="Code Block" data-role="Affichage de code — typographie monospace, fond sombre, lisibilité technique" data-tech="&lt;pre&gt;&lt;code&gt; · font-family: monospace · white-space: pre · overflow-x: auto">
-              <span class="annotation-tag">Code Block</span>
-<pre><code><span class="c-tag">&lt;header&gt;</span>
-  <span class="c-tag">&lt;nav&gt;</span>
-    <span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"/"</span><span class="c-tag">&gt;</span>Home<span class="c-tag">&lt;/a&gt;</span>
-  <span class="c-tag">&lt;/nav&gt;</span>
-<span class="c-tag">&lt;/header&gt;</span>
-<span class="c-tag">&lt;main&gt;</span>
-  <span class="c-tag">&lt;h1&gt;</span>Titre<span class="c-tag">&lt;/h1&gt;</span>
-  <span class="c-tag">&lt;p&gt;</span>Contenu<span class="c-tag">&lt;/p&gt;</span>
-<span class="c-tag">&lt;/main&gt;</span></code></pre>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION CARDS -->
-    <section class="section section-alt" id="cards">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Composants</p>
-          <h2 class="section-title">Les cartes</h2>
-          <p class="section-desc">Un des composants les plus courants du web.</p>
-        </div>
-
-        <div class="cards-grid annotated" data-label="Cards Grid" data-role="Grille de cartes — pattern très courant pour afficher des contenus homogènes" data-tech="&lt;div&gt; · display: grid · repeat(auto-fill, minmax()) · gap · responsive natif">
-          <span class="annotation-tag">Cards Grid</span>
-
-          <article class="card annotated" data-label="Card" data-role="Composant carte — regroupe image, titre, texte et action dans un bloc autonome" data-tech="&lt;article&gt; ou &lt;div&gt; · border-radius · box-shadow · overflow: hidden · hover state">
-            <span class="annotation-tag">Card</span>
-            <div class="card-media annotated" data-label="Card Media" data-role="Zone image ou visuel de la carte — ratio fixe pour l'homogénéité" data-tech="&lt;div&gt; · aspect-ratio: 16/9 · background-color ou &lt;img&gt; · object-fit: cover">
-              <span class="annotation-tag">Card Media</span>
-              <div class="card-media-inner" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
-                <span class="card-media-label">HTML</span>
-              </div>
-            </div>
-            <div class="card-body annotated" data-label="Card Body" data-role="Contenu textuel de la carte — titre, description, métadonnées" data-tech="&lt;div&gt; · padding interne · display: flex · flex-direction: column · flex: 1">
-              <span class="annotation-tag">Card Body</span>
-              <h3 class="card-title">Structure</h3>
-              <p class="card-text">HTML définit le squelette et le sens sémantique de chaque élément de la page.</p>
-            </div>
-            <div class="card-footer annotated" data-label="Card Footer" data-role="Pied de carte — actions, tags, date ou lien" data-tech="&lt;div&gt; · border-top · padding-top · display: flex · justify-content: space-between">
-              <span class="annotation-tag">Card Footer</span>
-              <span class="tag annotated" data-label="Tag / Badge" data-role="Étiquette de catégorie ou statut — information compacte et visuelle" data-tech="&lt;span&gt; · padding: 2px 8px · border-radius: 4px · font-size réduit · background coloré">
-                <span class="annotation-tag">Tag</span>
-                Fondation
-              </span>
-              <a href="#" class="card-link">En savoir plus →</a>
-            </div>
-          </article>
-
-          <article class="card annotated" data-label="Card" data-role="Composant carte — regroupe image, titre, texte et action dans un bloc autonome" data-tech="&lt;article&gt; ou &lt;div&gt; · border-radius · box-shadow · overflow: hidden · hover state">
-            <span class="annotation-tag">Card</span>
-            <div class="card-media">
-              <div class="card-media-inner" style="background: linear-gradient(135deg, #0f3460, #533483);">
-                <span class="card-media-label">CSS</span>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Apparence</h3>
-              <p class="card-text">CSS contrôle couleurs, typographie, espacements et mise en page responsive.</p>
-            </div>
-            <div class="card-footer">
-              <span class="tag">Présentation</span>
-              <a href="#" class="card-link">En savoir plus →</a>
-            </div>
-          </article>
-
-          <article class="card annotated" data-label="Card" data-role="Composant carte — regroupe image, titre, texte et action dans un bloc autonome" data-tech="&lt;article&gt; ou &lt;div&gt; · border-radius · box-shadow · overflow: hidden · hover state">
-            <span class="annotation-tag">Card</span>
-            <div class="card-media">
-              <div class="card-media-inner" style="background: linear-gradient(135deg, #1b4332, #2d6a4f);">
-                <span class="card-media-label">JS</span>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Comportement</h3>
-              <p class="card-text">JavaScript ajoute l'interactivité — comme ce système d'annotations que vous utilisez.</p>
-            </div>
-            <div class="card-footer">
-              <span class="tag">Interaction</span>
-              <a href="#" class="card-link">En savoir plus →</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION FORM -->
-    <section class="section" id="form">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <p class="section-eyebrow">Collecte de données</p>
-          <h2 class="section-title">Le formulaire</h2>
-          <p class="section-desc">Pour interagir avec l'utilisateur et collecter des informations.</p>
-        </div>
-
-        <form class="form annotated" data-label="Form" data-role="Formulaire — collecte des données saisies par l'utilisateur" data-tech="&lt;form&gt; · action + method · preventDefault() en JS · validation native HTML5">
-          <span class="annotation-tag">Form</span>
-
-          <div class="form-row">
-            <div class="field annotated" data-label="Field (champ)" data-role="Groupe label + input — unité de base d'un formulaire" data-tech="&lt;div&gt; · contient &lt;label&gt; + &lt;input&gt; · for/id liés pour l'accessibilité">
-              <span class="annotation-tag">Field</span>
-              <label class="label annotated" for="fname" data-label="Label" data-role="Étiquette d'un champ — indispensable pour l'accessibilité" data-tech="&lt;label&gt; · attribut for= lié à l'id de l'input · lu par les lecteurs d'écran">
-                <span class="annotation-tag">Label</span>
-                Prénom
-              </label>
-              <input class="input annotated" type="text" id="fname" placeholder="Votre prénom" data-label="Input (text)" data-role="Champ de saisie texte — une ligne, contenu libre" data-tech="&lt;input type='text'&gt; · placeholder · required · maxlength · autocomplete">
-                <span class="annotation-tag">Input</span>
-              </input>
-            </div>
-
-            <div class="field annotated" data-label="Field (champ)" data-role="Groupe label + input — unité de base d'un formulaire" data-tech="&lt;div&gt; · contient &lt;label&gt; + &lt;input&gt; · for/id liés pour l'accessibilité">
-              <span class="annotation-tag">Field</span>
-              <label class="label" for="femail">Email</label>
-              <input class="input annotated" type="email" id="femail" placeholder="vous@exemple.com" data-label="Input (email)" data-role="Champ email — valide automatiquement le format adresse@domaine.ext" data-tech="&lt;input type='email'&gt; · validation native du navigateur · keyboard adapté sur mobile">
-                <span class="annotation-tag">Input email</span>
-              </input>
-            </div>
-          </div>
-
-          <div class="field annotated" data-label="Textarea" data-role="Champ de saisie multi-lignes — pour les textes longs" data-tech="&lt;textarea&gt; · rows · resize: vertical · min-height · même style que &lt;input&gt; pour la cohérence">
-            <span class="annotation-tag">Textarea</span>
-            <label class="label" for="fmsg">Message</label>
-            <textarea class="textarea" id="fmsg" rows="4" placeholder="Votre message…"></textarea>
-          </div>
-
-          <div class="field-check annotated" data-label="Checkbox Field" data-role="Case à cocher — consentement, option binaire oui/non" data-tech="&lt;input type='checkbox'&gt; · &lt;label&gt; associé · required pour le consentement RGPD">
-            <span class="annotation-tag">Checkbox</span>
-            <input type="checkbox" id="fcheck" class="checkbox">
-            <label for="fcheck" class="label-check">J'accepte d'être recontacté</label>
-          </div>
-
-          <div class="form-actions annotated" data-label="Form Actions" data-role="Zone des boutons du formulaire — submit et annulation" data-tech="&lt;div&gt; · display: flex · justify-content: flex-end · gap entre les boutons">
-            <span class="annotation-tag">Form Actions</span>
-            <button type="reset" class="btn-ghost">Réinitialiser</button>
-            <button type="submit" class="btn-submit annotated" data-label="Submit Button" data-role="Bouton de soumission — envoie les données du formulaire" data-tech="&lt;button type='submit'&gt; ou &lt;input type='submit'&gt; · déclenche l'événement submit du &lt;form&gt;">
-              <span class="annotation-tag">Submit</span>
-              Envoyer →
-            </button>
-          </div>
-
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer class="site-footer annotated" data-label="Footer" data-role="Pied de page — liens secondaires, mentions légales, copyright" data-tech="&lt;footer&gt; HTML5 · landmark ARIA · souvent background sombre · plusieurs colonnes en grid">
-    <div class="annotation-tag">Footer</div>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-text">Anatomie<em>.web</em></span>
-        <p class="footer-desc">Un démonstrateur pour comprendre la structure d'un site.</p>
-      </div>
-      <div class="footer-links annotated" data-label="Footer Nav" data-role="Navigation secondaire du footer — liens utilitaires et légaux" data-tech="&lt;nav&gt; ou &lt;ul&gt; · display: flex ou grid · flex-wrap: wrap · font-size réduit">
-        <span class="annotation-tag">Footer Nav</span>
-        <a href="#hero">Accueil</a>
-        <a href="#content">Contenu</a>
-        <a href="#cards">Cartes</a>
-        <a href="#form">Formulaire</a>
-      </div>
-      <p class="footer-copy annotated" data-label="Copyright" data-role="Mention légale de propriété intellectuelle" data-tech="&lt;p&gt; · &amp;copy; pour le symbole © · font-size: 0.75rem · color réduit">
-        <span class="annotation-tag">Copyright</span>
-        © 2026 — Anatomie.web
-      </p>
-    </div>
-  </footer>
-
-  <!-- TOOLTIP OVERLAY -->
-  <div class="tooltip-overlay" id="tooltipOverlay">
-    <div class="tooltip-box" id="tooltipBox">
-      <button class="tooltip-close" id="tooltipClose">✕</button>
-      <p class="tooltip-label" id="ttLabel">—</p>
-      <p class="tooltip-role" id="ttRole">—</p>
-      <p class="tooltip-tech" id="ttTech">—</p>
-    </div>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span class="topbar-title">Anatomie<em>.web</em></span>
+    <span class="topbar-hint">← Cliquez sur un élément pour voir son code</span>
   </div>
+
+  <!-- SPLIT LAYOUT -->
+  <div class="split">
+
+    <!-- ══════════════════════════════════
+         LEFT — UI ELEMENTS
+    ═══════════════════════════════════════ -->
+    <div class="pane pane-left">
+      <div class="pane-label">Interface</div>
+
+      <!-- HEADER -->
+      <div class="ui-block">
+        <div class="block-title">Header</div>
+        <div class="demo-header el" data-id="header">
+          <span class="demo-logo">Logo</span>
+          <nav class="demo-nav">
+            <a class="demo-navlink active">Accueil</a>
+            <a class="demo-navlink">À propos</a>
+            <a class="demo-navlink">Contact</a>
+          </nav>
+          <button class="demo-cta">Action</button>
+          <div class="el-tag">Header</div>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <div class="ui-block">
+        <div class="block-title">Hero</div>
+        <div class="demo-hero el" data-id="hero">
+          <p class="demo-eyebrow el" data-id="eyebrow">Eyebrow<div class="el-tag">Eyebrow</div></p>
+          <h1 class="demo-h1 el" data-id="h1">Titre principal<div class="el-tag">H1</div></h1>
+          <p class="demo-desc el" data-id="paragraph">Description courte du contenu.<div class="el-tag">Paragraphe</div></p>
+          <div class="demo-actions">
+            <button class="demo-btn-primary el" data-id="btn-primary">Primaire<div class="el-tag">Btn Primary</div></button>
+            <button class="demo-btn-secondary el" data-id="btn-secondary">Secondaire<div class="el-tag">Btn Secondary</div></button>
+          </div>
+          <div class="el-tag">Hero</div>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="ui-block">
+        <div class="block-title">Card</div>
+        <div class="demo-card el" data-id="card">
+          <div class="demo-card-img el" data-id="card-media">Image<div class="el-tag">Card Media</div></div>
+          <div class="demo-card-body el" data-id="card-body">
+            <h3 class="el" data-id="h3">Titre de carte<div class="el-tag">H3</div></h3>
+            <p class="el" data-id="paragraph">Texte de description.<div class="el-tag">Paragraphe</div></p>
+          </div>
+          <div class="demo-card-footer el" data-id="card-footer">
+            <span class="demo-tag el" data-id="tag">Tag<div class="el-tag">Tag</div></span>
+            <a class="demo-link">Lien →</a>
+          </div>
+          <div class="el-tag">Card</div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="ui-block">
+        <div class="block-title">Formulaire</div>
+        <div class="demo-form el" data-id="form">
+          <div class="demo-field el" data-id="field">
+            <label class="demo-label el" data-id="label">Label<div class="el-tag">Label</div></label>
+            <input class="demo-input el" data-id="input" type="text" placeholder="Input texte">
+            <div class="el-tag">Field</div>
+          </div>
+          <div class="demo-field el" data-id="field">
+            <label class="demo-label">Email</label>
+            <input class="demo-input el" data-id="input-email" type="email" placeholder="Input email">
+          </div>
+          <div class="demo-field">
+            <label class="demo-label">Message</label>
+            <textarea class="demo-textarea el" data-id="textarea" placeholder="Textarea…" rows="2"></textarea>
+          </div>
+          <div class="demo-check-row el" data-id="checkbox">
+            <input type="checkbox" id="chk">
+            <label for="chk">Checkbox label</label>
+            <div class="el-tag">Checkbox</div>
+          </div>
+          <div class="demo-form-actions el" data-id="form-actions">
+            <button class="demo-btn-ghost">Annuler</button>
+            <button class="demo-btn-submit el" data-id="submit">Envoyer →<div class="el-tag">Submit</div></button>
+            <div class="el-tag">Form Actions</div>
+          </div>
+          <div class="el-tag">Form</div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="ui-block">
+        <div class="block-title">Footer</div>
+        <div class="demo-footer el" data-id="footer">
+          <span class="demo-logo">Logo</span>
+          <div class="demo-footer-links">
+            <a>Accueil</a><a>Contact</a><a>Mentions</a>
+          </div>
+          <span class="demo-copyright">© 2026</span>
+          <div class="el-tag">Footer</div>
+        </div>
+      </div>
+
+    </div><!-- /pane-left -->
+
+    <!-- ══════════════════════════════════
+         RIGHT — CODE PANELS
+    ═══════════════════════════════════════ -->
+    <div class="pane pane-right">
+      <div class="pane-label">Code</div>
+
+      <div class="code-empty" id="codeEmpty">
+        <div class="code-empty-icon">←</div>
+        <p>Cliquez sur un élément<br>pour voir son code</p>
+      </div>
+
+      <div class="code-panels hidden" id="codePanels">
+
+        <div class="element-title" id="elementTitle">—</div>
+        <div class="element-role" id="elementRole">—</div>
+
+        <!-- HTML -->
+        <div class="code-card code-html">
+          <div class="code-card-header">
+            <span class="lang-badge html">HTML</span>
+            <span class="lang-desc">Structure &amp; sémantique</span>
+          </div>
+          <pre class="code-pre" id="codeHTML"></pre>
+        </div>
+
+        <!-- CSS -->
+        <div class="code-card code-css">
+          <div class="code-card-header">
+            <span class="lang-badge css">CSS</span>
+            <span class="lang-desc">Apparence &amp; mise en page</span>
+          </div>
+          <pre class="code-pre" id="codeCSS"></pre>
+        </div>
+
+        <!-- JS -->
+        <div class="code-card code-js">
+          <div class="code-card-header">
+            <span class="lang-badge js">JS</span>
+            <span class="lang-desc">Comportement &amp; interactivité</span>
+          </div>
+          <pre class="code-pre" id="codeJS"></pre>
+        </div>
+
+      </div>
+    </div><!-- /pane-right -->
+
+  </div><!-- /split -->
 
   <script src="script.js"></script>
 </body>
