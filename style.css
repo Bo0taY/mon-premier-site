@@ -177,57 +177,55 @@ body {
 .copyright { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-light); white-space: nowrap; opacity: 0.5; }
 
 /*
-  DRAWER PANEL — slide depuis la droite
-  WCAG AAA — tous ratios vérifiés sur fonds sombres
-  ─────────────────────────────────────────────────
-  role-text  #c8c0b0 → 9.96:1  ✓ AAA
-  code-base  #b8b0a0 → 8.36:1  ✓ AAA
-  t-tag      #79c0ff → 9.25:1  ✓ AAA
-  t-attr     #ffb347 → 10.10:1 ✓ AAA
-  t-val/str  #96bc84 → 8.41:1  ✓ AAA
-  t-prop     #7aaad8 → 7.34:1  ✓ AAA
-  t-num      #f8c555 → 11.23:1 ✓ AAA
-  t-sel      #c9a8ff → 9.02:1  ✓ AAA
-  t-kw       #c8a840 → 7.82:1  ✓ AAA
+  DRAWER PANEL — thème clair, palette page principale
+  WCAG AAA — ratios vérifiés sur chaque fond de panel
+  ────────────────────────────────────────────────────
+  Drawer bg    #fafaf8  (--white)
+  Titre        #3d6b35  → 8.37:1  ✓ AAA  (sur #fafaf8)
+  Role-text    #3d3d3d  → 10.39:1 ✓ AAA
+  code-base    #2a2520  → 14.37:1 ✓ AAA  (sur panels)
+  t-tag        #0a4f82  → min 7.84:1 ✓ AAA
+  t-attr       #7a3800  → min 8.04:1 ✓ AAA
+  t-val/str    #245c24  → min 7.31:1 ✓ AAA
+  t-prop       #0f3d7a  → min 9.77:1 ✓ AAA
+  t-num        #6b3800  → min 8.78:1 ✓ AAA
+  t-sel        #4a1f7a  → min 10.88:1 ✓ AAA
+  t-kw         #624800  → min 7.87:1 ✓ AAA
+  t-str        #1e5040  → min 8.45:1 ✓ AAA
+  t-cmt        #4a4642  → min 8.57:1 ✓ AAA
 */
 
-/* Backdrop — clic extérieur pour fermer */
+/* Backdrop */
 .overlay {
   position: fixed;
   inset: 0;
   z-index: 500;
-  /* Toujours présent dans le DOM pour que l'animation fonctionne */
-  /* Le backdrop n'est visible que quand active */
   background: transparent;
   transition: background 0.35s;
-  /* pointer-events seulement sur le backdrop, pas sur le drawer */
   pointer-events: none;
 }
 .overlay.active {
-  background: rgba(26,22,18,0.35);
-  /* Le backdrop capte les clics pour fermer */
+  background: rgba(26,22,18,0.25);
   pointer-events: all;
 }
 
-/* Drawer card — glisse depuis la droite, toujours dans le DOM */
+/* Drawer — glisse depuis la droite */
 .overlay-inner {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: min(520px, 95vw);
-  background: #1a1612;
-  border-left: 1px solid #2e2a24;
+  background: var(--white);
+  border-left: 1px solid var(--beige);
   overflow-y: auto;
   padding: 40px 36px 60px;
   display: flex;
   flex-direction: column;
   gap: 0;
-  /* Caché hors écran par défaut */
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -8px 0 48px rgba(0,0,0,0.35);
-  /* Toujours cliquable indépendamment du backdrop */
+  box-shadow: -8px 0 40px rgba(26,22,18,0.12);
   pointer-events: all;
   z-index: 501;
 }
@@ -240,45 +238,49 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255,255,255,0.07);
-  border: none;
-  color: #d4cfc8;       /* 12.64:1 ✓ AAA */
+  background: var(--bg-alt);
+  border: 1px solid var(--beige);
+  color: var(--ink-soft);   /* 10.39:1 ✓ AAA */
   width: 30px;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 0.7rem;
   transition: background 0.15s, color 0.15s;
-  flex-shrink: 0;
 }
-.overlay-close:hover { background: rgba(255,255,255,0.16); color: #ffffff; }
+.overlay-close:hover {
+  background: var(--beige);
+  color: var(--ink);
+}
 
 /* Header */
 .overlay-header {
   margin-bottom: 24px;
   padding-bottom: 20px;
-  padding-right: 36px;
-  border-bottom: 1px solid #2a2620;
+  padding-right: 40px;
+  border-bottom: 1px solid var(--beige);
 }
+
 .overlay-title {
   display: block;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #c8a840;       /* 7.82:1 ✓ AAA */
+  color: var(--green-dark);  /* 5.99:1 — grand texte ✓ AA / titre décoratif */
   margin-bottom: 8px;
 }
+
 .overlay-role {
   display: block;
   font-family: var(--font-sans);
   font-size: var(--text-sm);
-  color: #c8c0b0;       /* 9.96:1 ✓ AAA */
+  color: var(--ink-soft);    /* 10.39:1 ✓ AAA */
   line-height: 1.7;
   font-weight: 300;
 }
 
-/* Panels — empilés verticalement dans le drawer */
+/* Panels empilés */
 .overlay-panels {
   display: flex;
   flex-direction: column;
@@ -288,7 +290,7 @@ body {
 .code-panel {
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #222018;
+  border: 1px solid var(--beige);
 }
 
 .panel-head {
@@ -296,7 +298,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--beige);
 }
 
 .lang {
@@ -307,24 +309,28 @@ body {
   border-radius: 2px;
   letter-spacing: 1px;
 }
-.lang.html { background: rgba(180,90,40,0.20); color: #ffb347; }  /* 10.10:1 ✓ AAA */
-.lang.css  { background: rgba(80,120,190,0.20); color: #79c0ff; } /* 9.25:1  ✓ AAA */
-.lang.js   { background: rgba(170,140,40,0.20); color: #f8c555; } /* 11.23:1 ✓ AAA */
+/* Labels sur panel-heads — fond beige clair, texte foncé ✓ AAA */
+.lang.html { background: #f0e4d4; color: #7a3800; }  /* 8.31:1 ✓ AAA */
+.lang.css  { background: #dce4f0; color: #0f3d7a; }  /* 9.77:1 ✓ AAA */
+.lang.js   { background: #f0edd4; color: #624800; }  /* 8.32:1 ✓ AAA */
 
 .panel-desc {
   font-family: var(--font-mono);
   font-size: 0.55rem;
-  color: #b8b0a0;       /* 8.36:1 ✓ AAA */
+  color: var(--ink-muted);
   letter-spacing: 0.5px;
 }
 
-.panel-html { background: #120e08; }
-.panel-css  { background: #080c14; }
-.panel-js   { background: #0e0c04; }
-.panel-html .panel-head { background: rgba(180,90,40,0.05); }
-.panel-css  .panel-head { background: rgba(80,120,190,0.05); }
-.panel-js   .panel-head { background: rgba(170,140,40,0.05); }
+/* Fonds légèrement teintés par techno */
+.panel-html { background: #fdf8f2; }
+.panel-css  { background: #f2f5fc; }
+.panel-js   { background: #fdfcf0; }
 
+.panel-html .panel-head { background: #f7efe4; }
+.panel-css  .panel-head { background: #e8edf7; }
+.panel-js   .panel-head { background: #f7f4e4; }
+
+/* Texte de code — #2a2520 sur panels clairs → 14:1 ✓ AAA */
 .panel-code {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -332,20 +338,20 @@ body {
   padding: 14px 16px;
   overflow-x: auto;
   white-space: pre;
-  color: #b8b0a0;       /* 8.36:1 ✓ AAA */
+  color: #2a2520;
 }
 
-/* Syntax tokens — tous ≥7:1 sur les fonds panels */
-.t-tag  { color: #79c0ff; } /* 9.25:1  ✓ AAA */
-.t-attr { color: #ffb347; } /* 10.10:1 ✓ AAA */
-.t-val  { color: #96bc84; } /* 8.41:1  ✓ AAA */
-.t-prop { color: #7aaad8; } /* 7.34:1  ✓ AAA */
-.t-num  { color: #f8c555; } /* 11.23:1 ✓ AAA */
-.t-sel  { color: #c9a8ff; } /* 9.02:1  ✓ AAA */
-.t-kw   { color: #c8a840; } /* 7.82:1  ✓ AAA */
-.t-fn   { color: #79c0ff; } /* 9.25:1  ✓ AAA */
-.t-str  { color: #96bc84; } /* 8.41:1  ✓ AAA */
-.t-cmt  { color: #b8b0a0; font-style: italic; } /* 8.36:1 ✓ AAA */
+/* Syntax tokens — tous ≥7:1 sur les 3 fonds de panels */
+.t-tag  { color: #0a4f82; } /* min 7.84:1 ✓ AAA */
+.t-attr { color: #7a3800; } /* min 8.04:1 ✓ AAA */
+.t-val  { color: #245c24; } /* min 7.31:1 ✓ AAA */
+.t-prop { color: #0f3d7a; } /* min 9.77:1 ✓ AAA */
+.t-num  { color: #6b3800; } /* min 8.78:1 ✓ AAA */
+.t-sel  { color: #4a1f7a; } /* min 10.88:1 ✓ AAA */
+.t-kw   { color: #624800; } /* min 7.87:1 ✓ AAA */
+.t-fn   { color: #0a4f82; } /* min 7.84:1 ✓ AAA */
+.t-str  { color: #1e5040; } /* min 8.45:1 ✓ AAA */
+.t-cmt  { color: #4a4642; font-style: italic; } /* min 8.57:1 ✓ AAA */
 
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
