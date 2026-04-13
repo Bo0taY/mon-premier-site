@@ -5,165 +5,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anatomie d'un site web</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <span class="topbar-title">Anatomie<em>.web</em></span>
-    <span class="topbar-hint">← Cliquez sur un élément pour voir son code</span>
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header el" data-id="header">
+    <div class="header-brand el" data-id="logo">
+      <div class="brand-mark">A<span>W</span></div>
+      <span class="brand-name">ANATOMIE.WEB</span>
+    </div>
+    <nav class="header-nav el" data-id="nav">
+      <a class="nav-link el" data-id="nav-link">Structure</a>
+      <a class="nav-link el" data-id="nav-link">Apparence</a>
+      <a class="nav-link el" data-id="nav-link">Interaction</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero el" data-id="hero">
+    <div class="hero-content">
+      <p class="eyebrow el" data-id="eyebrow">Démonstrateur interactif</p>
+      <h1 class="hero-h1">
+        <span class="h1-small el" data-id="h1-sub">Chaque élément a</span>
+        <span class="h1-large el" data-id="h1-main">un nom.</span>
+      </h1>
+      <p class="hero-desc el" data-id="paragraph">
+        Cliquez sur n'importe quel élément de cette page pour révéler sa structure — HTML, CSS et JavaScript.
+      </p>
+      <a class="hero-cta el" data-id="cta-primary">Explorer ↓</a>
+    </div>
+    <div class="hint el" data-id="hint">
+      <span>← cliquez sur un élément</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION TEXTE ═══════════ -->
+  <section class="section-text">
+    <div class="section-inner">
+      <div class="section-label el" data-id="section-label">01 — Typographie</div>
+      <div class="text-block">
+        <h2 class="section-h2 el" data-id="h2">La hiérarchie des titres</h2>
+        <div class="text-cols">
+          <p class="body-text el" data-id="paragraph">
+            HTML définit le sens de chaque élément. Un titre est sémantiquement différent d'un paragraphe — pas seulement visuellement. Cette distinction est lue par les moteurs de recherche et les lecteurs d'écran.
+          </p>
+          <div class="text-aside">
+            <h3 class="el" data-id="h3">Structure sémantique</h3>
+            <ul class="text-list el" data-id="list">
+              <li>H1 → titre principal, unique par page</li>
+              <li>H2 → sections de niveau 2</li>
+              <li>H3 → sous-sections</li>
+              <li>P → contenu textuel courant</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION CARDS ═══════════ -->
+  <section class="section-cards">
+    <div class="section-inner">
+      <div class="section-label el" data-id="section-label">02 — Composants</div>
+      <h2 class="section-h2 el" data-id="h2">Les cartes</h2>
+      <div class="cards-row">
+
+        <article class="card el" data-id="card">
+          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#c9d6e3,#a8bfd4)">
+            <span class="card-visual-label">HTML</span>
+          </div>
+          <div class="card-content el" data-id="card-body">
+            <span class="card-tag el" data-id="tag">Structure</span>
+            <h3 class="card-title el" data-id="h3">Le squelette</h3>
+            <p class="card-text el" data-id="paragraph">HTML définit ce que chaque élément est — pas comment il apparaît.</p>
+          </div>
+          <div class="card-foot el" data-id="card-footer">
+            <a class="card-link el" data-id="link">Lire →</a>
+          </div>
+        </article>
+
+        <article class="card el" data-id="card">
+          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#d4c9c9,#c4a8a8)">
+            <span class="card-visual-label">CSS</span>
+          </div>
+          <div class="card-content el" data-id="card-body">
+            <span class="card-tag el" data-id="tag">Apparence</span>
+            <h3 class="card-title el" data-id="h3">La peau</h3>
+            <p class="card-text el" data-id="paragraph">CSS contrôle couleurs, typographie, espacement et mise en page responsive.</p>
+          </div>
+          <div class="card-foot el" data-id="card-footer">
+            <a class="card-link el" data-id="link">Lire →</a>
+          </div>
+        </article>
+
+        <article class="card el" data-id="card">
+          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#c9d4c9,#a8c4a8)">
+            <span class="card-visual-label">JS</span>
+          </div>
+          <div class="card-content el" data-id="card-body">
+            <span class="card-tag el" data-id="tag">Interaction</span>
+            <h3 class="card-title el" data-id="h3">Le système nerveux</h3>
+            <p class="card-text el" data-id="paragraph">JavaScript gère les clics, les animations et les échanges avec les serveurs.</p>
+          </div>
+          <div class="card-foot el" data-id="card-footer">
+            <a class="card-link el" data-id="link">Lire →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION FORM ═══════════ -->
+  <section class="section-form">
+    <div class="section-inner section-inner--narrow">
+      <div class="section-label el" data-id="section-label">03 — Formulaire</div>
+      <h2 class="section-h2 el" data-id="h2">Collecte de données</h2>
+      <form class="form el" data-id="form" onsubmit="return false">
+        <div class="form-row">
+          <div class="field el" data-id="field">
+            <label class="label el" data-id="label" for="fn">Prénom</label>
+            <input class="input el" data-id="input" type="text" id="fn" placeholder="Votre prénom">
+          </div>
+          <div class="field el" data-id="field">
+            <label class="label" for="fe">Email</label>
+            <input class="input el" data-id="input-email" type="email" id="fe" placeholder="vous@exemple.com">
+          </div>
+        </div>
+        <div class="field el" data-id="field">
+          <label class="label" for="fm">Message</label>
+          <textarea class="textarea el" data-id="textarea" id="fm" rows="3" placeholder="Votre message…"></textarea>
+        </div>
+        <div class="form-check el" data-id="checkbox">
+          <input type="checkbox" id="fc">
+          <label for="fc">J'accepte d'être recontacté</label>
+        </div>
+        <div class="form-actions el" data-id="form-actions">
+          <button type="reset" class="btn-ghost el" data-id="btn-reset">Réinitialiser</button>
+          <button type="submit" class="btn-submit el" data-id="btn-submit">Envoyer →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer el" data-id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand el" data-id="logo">
+        <div class="brand-mark small">A<span>W</span></div>
+        <p class="footer-desc">Un site qui s'explique lui-même.</p>
+      </div>
+      <nav class="footer-nav el" data-id="footer-nav">
+        <a>Structure</a>
+        <a>Apparence</a>
+        <a>Interaction</a>
+      </nav>
+      <p class="copyright el" data-id="copyright">© 2026 — Anatomie.web</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════ OVERLAY ═══════════ -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-inner" id="overlayInner">
+      <button class="overlay-close" id="overlayClose">✕</button>
+      <div class="overlay-header">
+        <span class="overlay-title" id="overlayTitle">—</span>
+        <span class="overlay-role" id="overlayRole">—</span>
+      </div>
+      <div class="overlay-panels">
+        <div class="code-panel panel-html">
+          <div class="panel-head"><span class="lang html">HTML</span><span class="panel-desc">Structure</span></div>
+          <pre class="panel-code" id="panelHTML"></pre>
+        </div>
+        <div class="code-panel panel-css">
+          <div class="panel-head"><span class="lang css">CSS</span><span class="panel-desc">Apparence</span></div>
+          <pre class="panel-code" id="panelCSS"></pre>
+        </div>
+        <div class="code-panel panel-js">
+          <div class="panel-head"><span class="lang js">JS</span><span class="panel-desc">Comportement</span></div>
+          <pre class="panel-code" id="panelJS"></pre>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- SPLIT LAYOUT -->
-  <div class="split">
-
-    <!-- ══════════════════════════════════
-         LEFT — UI ELEMENTS
-    ═══════════════════════════════════════ -->
-    <div class="pane pane-left">
-      <div class="pane-label">Interface</div>
-
-      <!-- HEADER -->
-      <div class="ui-block">
-        <div class="block-title">Header</div>
-        <div class="demo-header el" data-id="header">
-          <span class="demo-logo">Logo</span>
-          <nav class="demo-nav">
-            <a class="demo-navlink active">Accueil</a>
-            <a class="demo-navlink">À propos</a>
-            <a class="demo-navlink">Contact</a>
-          </nav>
-          <button class="demo-cta">Action</button>
-          <div class="el-tag">Header</div>
-        </div>
-      </div>
-
-      <!-- HERO -->
-      <div class="ui-block">
-        <div class="block-title">Hero</div>
-        <div class="demo-hero el" data-id="hero">
-          <p class="demo-eyebrow el" data-id="eyebrow">Eyebrow<div class="el-tag">Eyebrow</div></p>
-          <h1 class="demo-h1 el" data-id="h1">Titre principal<div class="el-tag">H1</div></h1>
-          <p class="demo-desc el" data-id="paragraph">Description courte du contenu.<div class="el-tag">Paragraphe</div></p>
-          <div class="demo-actions">
-            <button class="demo-btn-primary el" data-id="btn-primary">Primaire<div class="el-tag">Btn Primary</div></button>
-            <button class="demo-btn-secondary el" data-id="btn-secondary">Secondaire<div class="el-tag">Btn Secondary</div></button>
-          </div>
-          <div class="el-tag">Hero</div>
-        </div>
-      </div>
-
-      <!-- CARDS -->
-      <div class="ui-block">
-        <div class="block-title">Card</div>
-        <div class="demo-card el" data-id="card">
-          <div class="demo-card-img el" data-id="card-media">Image<div class="el-tag">Card Media</div></div>
-          <div class="demo-card-body el" data-id="card-body">
-            <h3 class="el" data-id="h3">Titre de carte<div class="el-tag">H3</div></h3>
-            <p class="el" data-id="paragraph">Texte de description.<div class="el-tag">Paragraphe</div></p>
-          </div>
-          <div class="demo-card-footer el" data-id="card-footer">
-            <span class="demo-tag el" data-id="tag">Tag<div class="el-tag">Tag</div></span>
-            <a class="demo-link">Lien →</a>
-          </div>
-          <div class="el-tag">Card</div>
-        </div>
-      </div>
-
-      <!-- FORM -->
-      <div class="ui-block">
-        <div class="block-title">Formulaire</div>
-        <div class="demo-form el" data-id="form">
-          <div class="demo-field el" data-id="field">
-            <label class="demo-label el" data-id="label">Label<div class="el-tag">Label</div></label>
-            <input class="demo-input el" data-id="input" type="text" placeholder="Input texte">
-            <div class="el-tag">Field</div>
-          </div>
-          <div class="demo-field el" data-id="field">
-            <label class="demo-label">Email</label>
-            <input class="demo-input el" data-id="input-email" type="email" placeholder="Input email">
-          </div>
-          <div class="demo-field">
-            <label class="demo-label">Message</label>
-            <textarea class="demo-textarea el" data-id="textarea" placeholder="Textarea…" rows="2"></textarea>
-          </div>
-          <div class="demo-check-row el" data-id="checkbox">
-            <input type="checkbox" id="chk">
-            <label for="chk">Checkbox label</label>
-            <div class="el-tag">Checkbox</div>
-          </div>
-          <div class="demo-form-actions el" data-id="form-actions">
-            <button class="demo-btn-ghost">Annuler</button>
-            <button class="demo-btn-submit el" data-id="submit">Envoyer →<div class="el-tag">Submit</div></button>
-            <div class="el-tag">Form Actions</div>
-          </div>
-          <div class="el-tag">Form</div>
-        </div>
-      </div>
-
-      <!-- FOOTER -->
-      <div class="ui-block">
-        <div class="block-title">Footer</div>
-        <div class="demo-footer el" data-id="footer">
-          <span class="demo-logo">Logo</span>
-          <div class="demo-footer-links">
-            <a>Accueil</a><a>Contact</a><a>Mentions</a>
-          </div>
-          <span class="demo-copyright">© 2026</span>
-          <div class="el-tag">Footer</div>
-        </div>
-      </div>
-
-    </div><!-- /pane-left -->
-
-    <!-- ══════════════════════════════════
-         RIGHT — CODE PANELS
-    ═══════════════════════════════════════ -->
-    <div class="pane pane-right">
-      <div class="pane-label">Code</div>
-
-      <div class="code-empty" id="codeEmpty">
-        <div class="code-empty-icon">←</div>
-        <p>Cliquez sur un élément<br>pour voir son code</p>
-      </div>
-
-      <div class="code-panels hidden" id="codePanels">
-
-        <div class="element-title" id="elementTitle">—</div>
-        <div class="element-role" id="elementRole">—</div>
-
-        <!-- HTML -->
-        <div class="code-card code-html">
-          <div class="code-card-header">
-            <span class="lang-badge html">HTML</span>
-            <span class="lang-desc">Structure &amp; sémantique</span>
-          </div>
-          <pre class="code-pre" id="codeHTML"></pre>
-        </div>
-
-        <!-- CSS -->
-        <div class="code-card code-css">
-          <div class="code-card-header">
-            <span class="lang-badge css">CSS</span>
-            <span class="lang-desc">Apparence &amp; mise en page</span>
-          </div>
-          <pre class="code-pre" id="codeCSS"></pre>
-        </div>
-
-        <!-- JS -->
-        <div class="code-card code-js">
-          <div class="code-card-header">
-            <span class="lang-badge js">JS</span>
-            <span class="lang-desc">Comportement &amp; interactivité</span>
-          </div>
-          <pre class="code-pre" id="codeJS"></pre>
-        </div>
-
-      </div>
-    </div><!-- /pane-right -->
-
-  </div><!-- /split -->
 
   <script src="script.js"></script>
 </body>
