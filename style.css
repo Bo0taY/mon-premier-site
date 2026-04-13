@@ -196,18 +196,22 @@ body {
   position: fixed;
   inset: 0;
   z-index: 500;
+  /* Toujours présent dans le DOM pour que l'animation fonctionne */
+  /* Le backdrop n'est visible que quand active */
   background: transparent;
+  transition: background 0.35s;
+  /* pointer-events seulement sur le backdrop, pas sur le drawer */
   pointer-events: none;
-  transition: background 0.3s;
 }
 .overlay.active {
-  pointer-events: all;
   background: rgba(26,22,18,0.35);
+  /* Le backdrop capte les clics pour fermer */
+  pointer-events: all;
 }
 
-/* Drawer card — glisse depuis la droite */
+/* Drawer card — glisse depuis la droite, toujours dans le DOM */
 .overlay-inner {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -219,9 +223,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+  /* Caché hors écran par défaut */
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -8px 0 48px rgba(0,0,0,0.35);
+  /* Toujours cliquable indépendamment du backdrop */
+  pointer-events: all;
+  z-index: 501;
 }
 .overlay.active .overlay-inner {
   transform: translateX(0);
