@@ -177,64 +177,166 @@ body {
 .copyright { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-light); white-space: nowrap; opacity: 0.5; }
 
 /*
-  OVERLAY — WCAG AAA COMPLIANCE
-  ──────────────────────────────
-  Toutes les couleurs vérifiées sur les 4 fonds sombres.
-  min ratio sur fond le plus sombre (#080c14) :
-    role-text  #c8c0b0 → 10.83:1 ✓ AAA
-    code-base  #b8b0a0 →  9.09:1 ✓ AAA
-    comment    #b8b0a0 →  9.09:1 ✓ AAA (+ italic)
-    t-tag      #79c0ff → 10.06:1 ✓ AAA
-    t-attr     #ffb347 → 10.99:1 ✓ AAA
-    t-val/str  #96bc84 →  8.41:1 ✓ AAA
-    t-prop     #7aaad8 →  7.99:1 ✓ AAA
-    t-num      #f8c555 → 12.22:1 ✓ AAA
-    t-sel      #c9a8ff →  9.81:1 ✓ AAA
-    t-kw       #c8a840 →  8.51:1 ✓ AAA
-    overlay-close #d4cfc8 → 12.64:1 ✓ AAA
+  DRAWER PANEL — slide depuis la droite
+  WCAG AAA — tous ratios vérifiés sur fonds sombres
+  ─────────────────────────────────────────────────
+  role-text  #c8c0b0 → 9.96:1  ✓ AAA
+  code-base  #b8b0a0 → 8.36:1  ✓ AAA
+  t-tag      #79c0ff → 9.25:1  ✓ AAA
+  t-attr     #ffb347 → 10.10:1 ✓ AAA
+  t-val/str  #96bc84 → 8.41:1  ✓ AAA
+  t-prop     #7aaad8 → 7.34:1  ✓ AAA
+  t-num      #f8c555 → 11.23:1 ✓ AAA
+  t-sel      #c9a8ff → 9.02:1  ✓ AAA
+  t-kw       #c8a840 → 7.82:1  ✓ AAA
 */
 
-/* OVERLAY */
-.overlay { position: fixed; inset: 0; z-index: 500; background: rgba(26,22,18,0.75); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
-.overlay.active { opacity: 1; pointer-events: all; }
-.overlay-inner { background: #1a1612; border: 1px solid #2e2a24; border-radius: 4px; width: 100%; max-width: 860px; max-height: 88vh; overflow-y: auto; padding: 36px 40px; position: relative; transform: translateY(16px) scale(0.98); transition: transform 0.3s cubic-bezier(0.34,1.3,0.64,1); }
-.overlay.active .overlay-inner { transform: translateY(0) scale(1); }
-.overlay-close { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.07); border: none; color: #d4cfc8; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 0.7rem; transition: background 0.15s, color 0.15s; }
+/* Backdrop — clic extérieur pour fermer */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: transparent;
+  pointer-events: none;
+  transition: background 0.3s;
+}
+.overlay.active {
+  pointer-events: all;
+  background: rgba(26,22,18,0.35);
+}
+
+/* Drawer card — glisse depuis la droite */
+.overlay-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 95vw);
+  background: #1a1612;
+  border-left: 1px solid #2e2a24;
+  overflow-y: auto;
+  padding: 40px 36px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 48px rgba(0,0,0,0.35);
+}
+.overlay.active .overlay-inner {
+  transform: translateX(0);
+}
+
+/* Close button */
+.overlay-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.07);
+  border: none;
+  color: #d4cfc8;       /* 12.64:1 ✓ AAA */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
 .overlay-close:hover { background: rgba(255,255,255,0.16); color: #ffffff; }
-.overlay-header { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #2a2620; }
-.overlay-title { display: block; font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 2.5px; text-transform: uppercase; color: #c8a840; margin-bottom: 6px; }
-/* role-text: #c8c0b0 → 9.96:1 sur #1a1612 ✓ AAA */
-.overlay-role { display: block; font-family: var(--font-sans); font-size: var(--text-sm); color: #c8c0b0; line-height: 1.65; font-weight: 300; }
-.overlay-panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.code-panel { border-radius: 4px; overflow: hidden; border: 1px solid #222018; }
-.panel-head { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.lang { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 500; padding: 2px 7px; border-radius: 2px; letter-spacing: 1px; }
-/* lang badges sur fonds sombres — grandes tailles, AA suffit techniquement mais on vise AAA */
-.lang.html { background: rgba(180,90,40,0.20); color: #ffb347; } /* 10.99:1 ✓ AAA */
-.lang.css  { background: rgba(80,120,190,0.20); color: #79c0ff; } /* 10.06:1 ✓ AAA */
-.lang.js   { background: rgba(170,140,40,0.20); color: #f8c555; } /* 12.22:1 ✓ AAA */
-/* panel-desc: #b8b0a0 → 8.36:1 sur #1a1612 ✓ AAA */
-.panel-desc { font-family: var(--font-mono); font-size: 0.55rem; color: #b8b0a0; letter-spacing: 0.5px; }
+
+/* Header */
+.overlay-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  padding-right: 36px;
+  border-bottom: 1px solid #2a2620;
+}
+.overlay-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #c8a840;       /* 7.82:1 ✓ AAA */
+  margin-bottom: 8px;
+}
+.overlay-role {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: #c8c0b0;       /* 9.96:1 ✓ AAA */
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Panels — empilés verticalement dans le drawer */
+.overlay-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.code-panel {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #222018;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.lang {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+.lang.html { background: rgba(180,90,40,0.20); color: #ffb347; }  /* 10.10:1 ✓ AAA */
+.lang.css  { background: rgba(80,120,190,0.20); color: #79c0ff; } /* 9.25:1  ✓ AAA */
+.lang.js   { background: rgba(170,140,40,0.20); color: #f8c555; } /* 11.23:1 ✓ AAA */
+
+.panel-desc {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: #b8b0a0;       /* 8.36:1 ✓ AAA */
+  letter-spacing: 0.5px;
+}
+
 .panel-html { background: #120e08; }
 .panel-css  { background: #080c14; }
 .panel-js   { background: #0e0c04; }
 .panel-html .panel-head { background: rgba(180,90,40,0.05); }
 .panel-css  .panel-head { background: rgba(80,120,190,0.05); }
 .panel-js   .panel-head { background: rgba(170,140,40,0.05); }
-/* code-base: #b8b0a0 → min 8.36:1 ✓ AAA sur tous les fonds panels */
-.panel-code { font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.8; padding: 14px 16px; overflow-x: auto; white-space: pre; color: #b8b0a0; }
 
-/* Syntax tokens — tous ≥7:1 sur les fonds les plus sombres */
-.t-tag  { color: #79c0ff; } /* 10.06:1 ✓ AAA */
-.t-attr { color: #ffb347; } /* 10.99:1 ✓ AAA */
+.panel-code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.8;
+  padding: 14px 16px;
+  overflow-x: auto;
+  white-space: pre;
+  color: #b8b0a0;       /* 8.36:1 ✓ AAA */
+}
+
+/* Syntax tokens — tous ≥7:1 sur les fonds panels */
+.t-tag  { color: #79c0ff; } /* 9.25:1  ✓ AAA */
+.t-attr { color: #ffb347; } /* 10.10:1 ✓ AAA */
 .t-val  { color: #96bc84; } /* 8.41:1  ✓ AAA */
-.t-prop { color: #7aaad8; } /* 7.99:1  ✓ AAA */
-.t-num  { color: #f8c555; } /* 12.22:1 ✓ AAA */
-.t-sel  { color: #c9a8ff; } /* 9.81:1  ✓ AAA */
-.t-kw   { color: #c8a840; } /* 8.51:1  ✓ AAA */
-.t-fn   { color: #79c0ff; } /* 10.06:1 ✓ AAA */
+.t-prop { color: #7aaad8; } /* 7.34:1  ✓ AAA */
+.t-num  { color: #f8c555; } /* 11.23:1 ✓ AAA */
+.t-sel  { color: #c9a8ff; } /* 9.02:1  ✓ AAA */
+.t-kw   { color: #c8a840; } /* 7.82:1  ✓ AAA */
+.t-fn   { color: #79c0ff; } /* 9.25:1  ✓ AAA */
 .t-str  { color: #96bc84; } /* 8.41:1  ✓ AAA */
-/* comment: même couleur que code-base, différencié par italic */
 .t-cmt  { color: #b8b0a0; font-style: italic; } /* 8.36:1 ✓ AAA */
 
 ::-webkit-scrollbar { width: 5px; height: 5px; }

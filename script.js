@@ -954,9 +954,10 @@ copyright.textContent =
 
 };
 
-// ── OVERLAY LOGIC ─────────────────────────────────────────────────────────────
+// ── DRAWER LOGIC ─────────────────────────────────────────────────────────────
 
 const overlay      = document.getElementById('overlay');
+const overlayInner = document.getElementById('overlayInner');
 const overlayClose = document.getElementById('overlayClose');
 const overlayTitle = document.getElementById('overlayTitle');
 const overlayRole  = document.getElementById('overlayRole');
@@ -984,18 +985,28 @@ document.querySelectorAll('.el[data-id]').forEach(el => {
     panelCSS.innerHTML       = data.css;
     panelJS.innerHTML        = data.js;
 
+    // Scroll drawer back to top on new element
+    overlayInner.scrollTop = 0;
+
     overlay.classList.add('active');
   });
 });
 
-function closeOverlay() {
+function closeDrawer() {
   overlay.classList.remove('active');
   if (activeEl) { activeEl.classList.remove('active'); activeEl = null; }
 }
 
-overlayClose.addEventListener('click', closeOverlay);
-overlay.addEventListener('click', e => { if (e.target === overlay) closeOverlay(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+// Close on ✕ button
+overlayClose.addEventListener('click', closeDrawer);
+
+// Close on click outside the drawer card (on the backdrop)
+overlay.addEventListener('click', e => {
+  if (!overlayInner.contains(e.target)) closeDrawer();
+});
+
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
 // Prevent form submit
 document.querySelector('form')?.addEventListener('submit', e => e.preventDefault());
