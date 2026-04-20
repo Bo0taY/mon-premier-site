@@ -3,192 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anatomie d'un site web</title>
+  <title>Moins. — Un manifeste typographique</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Barlow+Condensed:wght@100;300;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ═══════════ HEADER ═══════════ -->
-  <header class="header el" data-id="header">
-    <div class="header-brand el" data-id="logo">
-      <div class="brand-mark">A<span>W</span></div>
-      <span class="brand-name">ANATOMIE.WEB</span>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#intro">Moins.</a>
+    <div class="nav-links">
+      <a href="#principe" class="nav-link" data-section="principe">Principe</a>
+      <a href="#typographie" class="nav-link" data-section="typographie">Typographie</a>
+      <a href="#espace" class="nav-link" data-section="espace">Espace</a>
+      <a href="#lisibilite" class="nav-link" data-section="lisibilite">Lisibilité</a>
+      <a href="#manifeste" class="nav-link" data-section="manifeste">Manifeste</a>
     </div>
-    <nav class="header-nav el" data-id="nav">
-      <a class="nav-link el" data-id="nav-link">Structure</a>
-      <a class="nav-link el" data-id="nav-link">Apparence</a>
-      <a class="nav-link el" data-id="nav-link">Interaction</a>
-    </nav>
-  </header>
+    <div class="nav-index" id="navIndex">01</div>
+  </nav>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero el" data-id="hero">
-    <div class="hero-content">
-      <p class="eyebrow el" data-id="eyebrow">Démonstrateur interactif</p>
-      <h1 class="hero-h1">
-        <span class="h1-small el" data-id="h1-sub">Chaque élément a</span>
-        <span class="h1-large el" data-id="h1-main">un nom.</span>
+  <!-- 01 INTRO -->
+  <section class="section s-intro" id="intro" data-index="00">
+    <div class="intro-content">
+      <p class="intro-pre">Une démonstration</p>
+      <h1 class="intro-title">
+        <span class="word" data-delay="0">Moins</span>
+        <span class="word italic" data-delay="1">est</span>
+        <span class="word" data-delay="2">plus.</span>
       </h1>
-      <p class="hero-desc el" data-id="paragraph">
-        Cliquez sur n'importe quel élément de cette page pour révéler sa structure — HTML, CSS et JavaScript.
-      </p>
-      <a class="hero-cta el" data-id="cta-primary">Explorer ↓</a>
+      <p class="intro-sub">L'interface la plus efficace n'a pas besoin de couleur,<br>de décoration, ni d'ornement.<br>Elle n'a besoin que d'une chose —</p>
+      <p class="intro-reveal" id="introReveal">de clarté.</p>
     </div>
-    <div class="hint el" data-id="hint">
-      <span>← cliquez sur un élément</span>
+    <div class="scroll-cue">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">défiler</span>
     </div>
   </section>
 
-  <!-- ═══════════ SECTION TEXTE ═══════════ -->
-  <section class="section-text">
-    <div class="section-inner">
-      <div class="section-label el" data-id="section-label">01 — Typographie</div>
-      <div class="text-block">
-        <h2 class="section-h2 el" data-id="h2">La hiérarchie des titres</h2>
-        <div class="text-cols">
-          <p class="body-text el" data-id="paragraph">
-            HTML définit le sens de chaque élément. Un titre est sémantiquement différent d'un paragraphe — pas seulement visuellement. Cette distinction est lue par les moteurs de recherche et les lecteurs d'écran.
-          </p>
-          <div class="text-aside">
-            <h3 class="el" data-id="h3">Structure sémantique</h3>
-            <ul class="text-list el" data-id="list">
-              <li>H1 → titre principal, unique par page</li>
-              <li>H2 → sections de niveau 2</li>
-              <li>H3 → sous-sections</li>
-              <li>P → contenu textuel courant</li>
-            </ul>
+  <!-- 02 PRINCIPE -->
+  <section class="section s-principe" id="principe" data-index="01">
+    <div class="section-num">01</div>
+    <div class="principe-grid">
+      <div class="principe-left">
+        <h2 class="s-title">Le<br><em>principe</em><br>du vide.</h2>
+      </div>
+      <div class="principe-right">
+        <p class="body-lg">L'espace blanc n'est pas une absence. C'est une présence active — il donne du poids à ce qui reste.</p>
+        <p class="body-sm">Une interface encombrée force l'œil à choisir. Une interface vide guide sans effort. Le minimalisme n'est pas une esthétique — c'est une décision fonctionnelle.</p>
+        <div class="principe-stat">
+          <span class="stat-num">80%</span>
+          <span class="stat-label">des éléments visuels d'une interface<br>ne contribuent pas à sa lisibilité.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TYPOGRAPHIE -->
+  <section class="section s-typo" id="typographie" data-index="02">
+    <div class="section-num">02</div>
+    <h2 class="s-title centered">Typographie.</h2>
+    <div class="typo-showcase">
+
+      <div class="typo-row typo-serif">
+        <span class="typo-label">Serif — Playfair Display</span>
+        <p class="typo-specimen serif-specimen">Aa Bb Cc</p>
+        <p class="typo-usage">Titres, emphase, hiérarchie haute</p>
+      </div>
+
+      <div class="typo-row typo-condensed">
+        <span class="typo-label">Condensed — Barlow Condensed</span>
+        <p class="typo-specimen condensed-specimen">STRUCTURE DENSITÉ</p>
+        <p class="typo-usage">Labels, navigation, données</p>
+      </div>
+
+      <div class="typo-row typo-mono">
+        <span class="typo-label">Mono — DM Mono</span>
+        <p class="typo-specimen mono-specimen">function clarity() {}</p>
+        <p class="typo-usage">Code, métadonnées, références</p>
+      </div>
+
+      <div class="typo-contrast">
+        <p class="contrast-line">
+          <span class="c-thin">légèreté</span>
+          <span class="c-heavy">DENSITÉ</span>
+          <span class="c-italic">mouvement</span>
+          <span class="c-mono">précision</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 ESPACE -->
+  <section class="section s-espace" id="espace" data-index="03">
+    <div class="section-num">03</div>
+    <div class="espace-content">
+      <h2 class="s-title">L'espace<br>comme<br><em>grammaire.</em></h2>
+      <div class="espace-demo">
+        <div class="espace-bad">
+          <p class="demo-label">Sans espace</p>
+          <div class="demo-block bad">
+            <p>Titre</p><p>Sous-titre immédiat</p><p>Corps de texte qui suit sans respiration et continue ainsi de suite sans aucun espace pour que l'œil puisse se reposer entre les éléments.</p><button>Action</button>
+          </div>
+        </div>
+        <div class="espace-vs">vs</div>
+        <div class="espace-good">
+          <p class="demo-label">Avec espace</p>
+          <div class="demo-block good">
+            <p class="g-title">Titre</p>
+            <p class="g-sub">Sous-titre</p>
+            <p class="g-body">Corps de texte avec de l'espace pour respirer entre chaque élément.</p>
+            <button class="g-btn">Action</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ SECTION CARDS ═══════════ -->
-  <section class="section-cards">
-    <div class="section-inner">
-      <div class="section-label el" data-id="section-label">02 — Composants</div>
-      <h2 class="section-h2 el" data-id="h2">Les cartes</h2>
-      <div class="cards-row">
+  <!-- 05 LISIBILITE -->
+  <section class="section s-lisib" id="lisibilite" data-index="04">
+    <div class="section-num">04</div>
+    <h2 class="s-title centered">Lisibilité.</h2>
+    <div class="lisib-grid">
 
-        <article class="card el" data-id="card">
-          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#c9d6e3,#a8bfd4)">
-            <span class="card-visual-label">HTML</span>
-          </div>
-          <div class="card-content el" data-id="card-body">
-            <span class="card-tag el" data-id="tag">Structure</span>
-            <h3 class="card-title el" data-id="h3">Le squelette</h3>
-            <p class="card-text el" data-id="paragraph">HTML définit ce que chaque élément est — pas comment il apparaît.</p>
-          </div>
-          <div class="card-foot el" data-id="card-footer">
-            <a class="card-link el" data-id="link">Lire →</a>
-          </div>
-        </article>
+      <div class="lisib-item">
+        <span class="lisib-num">16px</span>
+        <p class="lisib-desc">taille minimale pour le corps de texte sur écran</p>
+      </div>
 
-        <article class="card el" data-id="card">
-          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#d4c9c9,#c4a8a8)">
-            <span class="card-visual-label">CSS</span>
-          </div>
-          <div class="card-content el" data-id="card-body">
-            <span class="card-tag el" data-id="tag">Apparence</span>
-            <h3 class="card-title el" data-id="h3">La peau</h3>
-            <p class="card-text el" data-id="paragraph">CSS contrôle couleurs, typographie, espacement et mise en page responsive.</p>
-          </div>
-          <div class="card-foot el" data-id="card-footer">
-            <a class="card-link el" data-id="link">Lire →</a>
-          </div>
-        </article>
+      <div class="lisib-item">
+        <span class="lisib-num">65ch</span>
+        <p class="lisib-desc">largeur idéale d'une colonne de texte</p>
+      </div>
 
-        <article class="card el" data-id="card">
-          <div class="card-visual el" data-id="card-media" style="background: linear-gradient(135deg,#c9d4c9,#a8c4a8)">
-            <span class="card-visual-label">JS</span>
-          </div>
-          <div class="card-content el" data-id="card-body">
-            <span class="card-tag el" data-id="tag">Interaction</span>
-            <h3 class="card-title el" data-id="h3">Le système nerveux</h3>
-            <p class="card-text el" data-id="paragraph">JavaScript gère les clics, les animations et les échanges avec les serveurs.</p>
-          </div>
-          <div class="card-foot el" data-id="card-footer">
-            <a class="card-link el" data-id="link">Lire →</a>
-          </div>
-        </article>
+      <div class="lisib-item">
+        <span class="lisib-num">1.6</span>
+        <p class="lisib-desc">interligne optimal pour la lecture longue</p>
+      </div>
 
+      <div class="lisib-item">
+        <span class="lisib-num">7:1</span>
+        <p class="lisib-desc">ratio de contraste WCAG AAA — non négociable</p>
+      </div>
+
+      <div class="lisib-rule">
+        <p class="rule-text">Une interface lisible n'est pas une interface jolie.<br>C'est une interface <em>respectueuse.</em></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 MANIFESTE -->
+  <section class="section s-manifeste" id="manifeste" data-index="05">
+    <div class="section-num">05</div>
+    <div class="manifeste-content">
+      <h2 class="manifeste-title">
+        <span class="m-line" data-delay="0">Supprimer</span>
+        <span class="m-line italic" data-delay="1">jusqu'à</span>
+        <span class="m-line" data-delay="2">l'évidence.</span>
+      </h2>
+      <div class="manifeste-body">
+        <p>Retirez tout ce qui peut être retiré. Si l'interface fonctionne encore — continuez.</p>
+        <p>Ce qui reste après cette opération n'est pas un résidu. C'est l'essentiel.</p>
+        <p class="manifeste-end">Ce site est sa propre démonstration.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ SECTION FORM ═══════════ -->
-  <section class="section-form">
-    <div class="section-inner section-inner--narrow">
-      <div class="section-label el" data-id="section-label">03 — Formulaire</div>
-      <h2 class="section-h2 el" data-id="h2">Collecte de données</h2>
-      <form class="form el" data-id="form" onsubmit="return false">
-        <div class="form-row">
-          <div class="field el" data-id="field">
-            <label class="label el" data-id="label" for="fn">Prénom</label>
-            <input class="input el" data-id="input" type="text" id="fn" placeholder="Votre prénom">
-          </div>
-          <div class="field el" data-id="field">
-            <label class="label" for="fe">Email</label>
-            <input class="input el" data-id="input-email" type="email" id="fe" placeholder="vous@exemple.com">
-          </div>
-        </div>
-        <div class="field el" data-id="field">
-          <label class="label" for="fm">Message</label>
-          <textarea class="textarea el" data-id="textarea" id="fm" rows="3" placeholder="Votre message…"></textarea>
-        </div>
-        <div class="form-check el" data-id="checkbox">
-          <input type="checkbox" id="fc">
-          <label for="fc">J'accepte d'être recontacté</label>
-        </div>
-        <div class="form-actions el" data-id="form-actions">
-          <button type="reset" class="btn-ghost el" data-id="btn-reset">Réinitialiser</button>
-          <button type="submit" class="btn-submit el" data-id="btn-submit">Envoyer →</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="footer el" data-id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand el" data-id="logo">
-        <div class="brand-mark small">A<span>W</span></div>
-        <p class="footer-desc">Un site qui s'explique lui-même.</p>
-      </div>
-      <nav class="footer-nav el" data-id="footer-nav">
-        <a>Structure</a>
-        <a>Apparence</a>
-        <a>Interaction</a>
-      </nav>
-      <p class="copyright el" data-id="copyright">© 2026 — Anatomie.web</p>
-    </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-left">Moins. — 2026</span>
+    <span class="footer-mid">Interface minimaliste & typographie</span>
+    <span class="footer-right">fait avec HTML · CSS · JS</span>
   </footer>
-
-  <!-- ═══════════ OVERLAY ═══════════ -->
-  <div class="overlay" id="overlay">
-    <div class="overlay-inner" id="overlayInner">
-      <button class="overlay-close" id="overlayClose">✕</button>
-      <div class="overlay-header">
-        <span class="overlay-title" id="overlayTitle">—</span>
-        <span class="overlay-role" id="overlayRole">—</span>
-      </div>
-      <div class="overlay-panels">
-        <div class="code-panel panel-html">
-          <div class="panel-head"><span class="lang html">HTML</span><span class="panel-desc">Structure</span></div>
-          <pre class="panel-code" id="panelHTML"></pre>
-        </div>
-        <div class="code-panel panel-css">
-          <div class="panel-head"><span class="lang css">CSS</span><span class="panel-desc">Apparence</span></div>
-          <pre class="panel-code" id="panelCSS"></pre>
-        </div>
-        <div class="code-panel panel-js">
-          <div class="panel-head"><span class="lang js">JS</span><span class="panel-desc">Comportement</span></div>
-          <pre class="panel-code" id="panelJS"></pre>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
